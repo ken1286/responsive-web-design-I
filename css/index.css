@@ -71,13 +71,12 @@ h1, h2, h3, h4, h5 {
 	max-width: 900px;
 	margin: auto;
 	border: 1px solid black;
-	background-color: lightgray;
 }
 
 header {
   display: flex;
 	width: 100%;
-	background-color: teal;
+	/* background-color: teal; */
 	padding: 15px 0 15px 0; */
 	z-index: 9999;
 }
@@ -91,12 +90,11 @@ header nav {
 
 header nav a {
 	font-family: 'Orbitron', sans-serif;
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 
 .logo {
-	width: 25%;
 	height: 36px;
 	/* background-image: url("../img/logo.png");
   background-repeat: no-repeat; */
@@ -117,7 +115,6 @@ header nav a {
 
 .inno {
 	font-size: 65px;
-
 	animation: slam 0.5s;
 	animation-timing-function: ease-in;
 }
@@ -153,7 +150,7 @@ header nav a {
 	margin-top: 20px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-	padding: 20px 0px 20px 20px;
+	padding: 20px 0px 20px 0;
 }
 
 .mc-top {
@@ -169,16 +166,19 @@ header nav a {
 	width: 45%;
 }
 
-.mc-img {
+.middle-img {
 	width: 100%;
-	height: 182px;
-	background-image: url("../img/mid-page-accent.jpg");
+	height: auto;
+	object-fit: contain;
+	/* background-image: url("../img/mid-page-accent.jpg");
 	background-repeat: no-repeat;
+	background-size: auto; */
 }
 
 .mc-bottom {
   display: flex;
-  justify-content: space-evenly;
+	justify-content: space-evenly;
+	width: 100%;
 	margin-top: 20px;
 }
 
@@ -261,6 +261,7 @@ footer {
 	align-self: flex-end;
 }
 
+/* Tablet view */
 @media (max-width: 800px) {
 	.container {
     max-width: 800px;
@@ -283,5 +284,63 @@ footer {
 
   .top-image {
     display: none;
+	}
+}
+
+/* Mobile view */
+@media (max-width: 500px) {
+	.container {
+    max-width: 500px;
   }
+
+	header nav {
+		flex-flow: column wrap;
+		align-content: center;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+	header nav a {
+		flex-flow: column wrap;
+		justify-content: space-evenly;
+		padding: 10px;
+		border-bottom: 1px solid black;
+		width: 100%;
+		text-align: center;
+	}
+
+	header nav a:nth-child(1) {
+		border-top: 1px solid black;
+	}
+
+	.top-image {
+		display: none;
+	}
+
+	button {
+		width: 50%;
+	}
+
+	.mc-top {
+		flex-flow: column nowrap;
+	}
+
+	.mc-top-1, .mc-top-2 {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.middle-img {
+		max-height: 90px;
+	}
+
+	.mc-bottom {
+		flex-flow: column nowrap;
+		width: 100%;
+	}
+
+	.mcb-1, .mcb-2, .mcb-3 {
+		width: 100%;
+		padding: 10px;
+	}
 }
